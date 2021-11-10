@@ -29,6 +29,9 @@
                                 <state key="normal" title="Start">
                                     <color key="titleColor" red="0.13333332540000001" green="0.32941177490000001" blue="0.40784314269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="start:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yf7-Nz-Rd9"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Array of numbers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1A-t8-nF0">
                                 <rect key="frame" x="15" y="282" width="384" height="24"/>
@@ -105,6 +108,9 @@
                                 <state key="normal" title="Restart">
                                     <color key="titleColor" red="0.13333332540000001" green="0.32941177490000001" blue="0.40784314269999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="restart:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9jP-Bt-7sI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -128,6 +134,12 @@
                             <constraint firstItem="DRa-RH-NYy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wxG-Bp-C3p"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="arrayNumbersTextField" destination="Z20-gz-YIR" id="K4s-qY-aHO"/>
+                        <outlet property="counterLabel" destination="eQu-KM-Hju" id="bmi-48-P0c"/>
+                        <outlet property="indexLabel" destination="j4C-5F-Nvg" id="9Ne-Xm-W9k"/>
+                        <outlet property="numberLabel" destination="6tc-8W-Ip8" id="Fu6-Jp-c65"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
