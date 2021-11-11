@@ -12,9 +12,12 @@ class ViewController: UIViewController {
     
     // MARK: - Outlet
     @IBOutlet weak var arrayNumbersTextField: UITextField!
-    @IBOutlet weak var numberLabel: UILabel!
-    @IBOutlet weak var indexLabel: UILabel!
+    @IBOutlet weak var numberTextField: UITextField!
     @IBOutlet weak var counterLabel: UILabel!
+    @IBOutlet weak var startButton: UIButton!
+    @IBOutlet weak var restartButton: UIButton!
+    @IBOutlet weak var lineView: UIView!
+    
     
     // MARK: - Properties
     override var prefersStatusBarHidden: Bool {
@@ -28,6 +31,11 @@ class ViewController: UIViewController {
         // When user touch on screen
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         self.view.addGestureRecognizer(tap)
+        
+        // Radius button and view
+        startButton.layer.cornerRadius = 10
+        restartButton.layer.cornerRadius = 10
+        lineView.layer.cornerRadius = 10
     }
     
     
@@ -60,9 +68,7 @@ class ViewController: UIViewController {
     
     @IBAction func restart(_ sender: UIButton) {
         arrayNumbersTextField.text = ""
-        numberLabel.text = "0"
-        indexLabel.text = "0"
-        counterLabel.text = "0"
+        counterLabel.text = "10"
     }
 }
 
