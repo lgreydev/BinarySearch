@@ -17,6 +17,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var restartButton: UIButton!
     @IBOutlet weak var lineView: UIView!
+    @IBOutlet weak var indexLabel: UILabel!
+    
+    
     
     let algorithm = BinarySearch()
     
@@ -47,11 +50,8 @@ class ViewController: UIViewController {
     }
     
     // Create array from 0 and to 'length'
-    private func createArray() -> [Int] {
+    private func createArray(length: Int) -> [Int] {
         var array: [Int] = []
-        guard let arrayLength = arrayNumbersTextField?.text, !arrayLength.isEmpty  else { fatalError() }
-        
-        if let length = Int(arrayLength) {
             for number in 0..<length {
                 array.append(number)
             }
@@ -61,15 +61,26 @@ class ViewController: UIViewController {
     
     // MARK: - Action
     @IBAction func start(_ sender: UIButton) {
+        
+        
         let array: [Int] = createArray()
         
+        guard let text = numberTextField.text else { fatalError()}
+        guard let number = Int(text) else { fatalError()}
         
-        print(array)
+        let result = algorithm.binarySearch(in: array, for: number)
+        
+        
+        
+        guard let counterText: String = String(result.1 ?? 0) else { fatalError()}
+        
+        counterLabel.text = counterText
     }
     
     @IBAction func restart(_ sender: UIButton) {
         arrayNumbersTextField.text = ""
-        counterLabel.text = "10"
+        counterLabel.text = "0"
+        indexLabel.text = "nil"
     }
 }
 
