@@ -16,6 +16,7 @@
 		5E1080BF27401CD30087F1ED /* BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1080BE27401CD30087F1ED /* BinarySearch.swift */; };
 		5E1080C127404E680087F1ED /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5E1080C027404E680087F1ED /* README.md */; };
 		5E1080C327404EF70087F1ED /* License in Resources */ = {isa = PBXBuildFile; fileRef = 5E1080C227404EF70087F1ED /* License */; };
+		5E1080C527404F610087F1ED /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5E1080C427404F610087F1ED /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		5E1080BE27401CD30087F1ED /* BinarySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearch.swift; sourceTree = "<group>"; };
 		5E1080C027404E680087F1ED /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5E1080C227404EF70087F1ED /* License */ = {isa = PBXFileReference; lastKnownFileType = text; path = License; sourceTree = "<group>"; };
+		5E1080C427404F610087F1ED /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +48,7 @@
 		5E023EB32739CBB900C6162A = {
 			isa = PBXGroup;
 			children = (
+				5E1080C427404F610087F1ED /* .gitignore */,
 				5E1080C227404EF70087F1ED /* License */,
 				5E1080C027404E680087F1ED /* README.md */,
 				5E023EBE2739CBB900C6162A /* BinarySearch */,
@@ -137,6 +140,7 @@
 				5E023EC92739CBBB00C6162A /* Assets.xcassets in Resources */,
 				5E1080C127404E680087F1ED /* README.md in Resources */,
 				5E1080C327404EF70087F1ED /* License in Resources */,
+				5E1080C527404F610087F1ED /* .gitignore in Resources */,
 				5E023EC72739CBB900C6162A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
