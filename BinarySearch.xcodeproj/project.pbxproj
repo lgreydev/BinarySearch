@@ -32,6 +32,8 @@
 		5E1080C027404E680087F1ED /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5E1080C227404EF70087F1ED /* License */ = {isa = PBXFileReference; lastKnownFileType = text; path = License; sourceTree = "<group>"; };
 		5E1080C427404F610087F1ED /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		5E1080C7274052360087F1ED /* 001 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 001; sourceTree = "<group>"; };
+		5E1080C8274052910087F1ED /* Binary-Search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Binary-Search.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 		5E023EB32739CBB900C6162A = {
 			isa = PBXGroup;
 			children = (
+				5E1080C62740521A0087F1ED /* Screenshot */,
 				5E1080C427404F610087F1ED /* .gitignore */,
 				5E1080C227404EF70087F1ED /* License */,
 				5E1080C027404E680087F1ED /* README.md */,
@@ -77,6 +80,15 @@
 				5E1080BE27401CD30087F1ED /* BinarySearch.swift */,
 			);
 			path = BinarySearch;
+			sourceTree = "<group>";
+		};
+		5E1080C62740521A0087F1ED /* Screenshot */ = {
+			isa = PBXGroup;
+			children = (
+				5E1080C7274052360087F1ED /* 001 */,
+				5E1080C8274052910087F1ED /* Binary-Search.png */,
+			);
+			path = Screenshot;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
