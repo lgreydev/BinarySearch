@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var restartButton: UIButton!
     @IBOutlet weak var lineView: UIView!
     
+    let algorithm = BinarySearch()
     
     // MARK: - Properties
     override var prefersStatusBarHidden: Bool {
