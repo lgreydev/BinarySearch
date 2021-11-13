@@ -18,6 +18,7 @@ class BinarySearch {
         var counter = 0
         
         while left <= right {
+            counter += 1
             let middle = Int(floor(Double(left + right) / 2.0))
             
             if numbers[middle] < value {
@@ -27,9 +28,7 @@ class BinarySearch {
             } else {
                 return (middle, counter)
             }
-            counter += 1
         }
-        
         return (nil, nil)
     }
 }

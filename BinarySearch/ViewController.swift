@@ -19,11 +19,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var lineView: UIView!
     @IBOutlet weak var indexLabel: UILabel!
     
-    
-    
-    let algorithm = BinarySearch()
-    
     // MARK: - Properties
+    private let algorithm = BinarySearch()
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -52,35 +49,64 @@ class ViewController: UIViewController {
     // Create array from 0 and to 'length'
     private func createArray(length: Int) -> [Int] {
         var array: [Int] = []
-            for number in 0..<length {
+        for number in 1...length {
                 array.append(number)
             }
-        }
         return array
     }
     
     // MARK: - Action
     @IBAction func start(_ sender: UIButton) {
         
+        // Get length array
+        guard let numberText =
+                arrayNumbersTextField.text,
+                arrayNumbersTextField.text?.isEmpty == false
+                else { self.alertMessage("Please, set the length of the array!"); return }
         
-        let array: [Int] = createArray()
+        // Get number
+        guard let valueText =
+                numberTextField.text,
+                numberTextField.text?.isEmpty == false
+                else { self.alertMessage("Please, set the number value!"); return }
+       
+        guard let number = Int(numberText) else { fatalError() }
+        guard let value = Int(valueText) else { fatalError() }
         
-        guard let text = numberTextField.text else { fatalError()}
-        guard let number = Int(text) else { fatalError()}
+        if number == 0 { self.alertMessage("The array must be > 0")}
+        if value > number { self.alertMessage("The value must be <= \(numberText)"); return }
+        if value == 0 { self.alertMessage("The value must be > 0"); return }
         
-        let result = algorithm.binarySearch(in: array, for: number)
+        let array = createArray(length: number)
+        let result = algorithm.binarySearch(in: array, for: value)
         
-        
-        
-        guard let counterText: String = String(result.1 ?? 0) else { fatalError()}
-        
-        counterLabel.text = counterText
+        guard let index = result.0, let counter = result.1 else { fatalError() }
+        indexLabel.text = String(index)
+        counterLabel.text = String(counter)
     }
     
     @IBAction func restart(_ sender: UIButton) {
         arrayNumbersTextField.text = ""
+        numberTextField.text = ""
         counterLabel.text = "0"
         indexLabel.text = "nil"
     }
+}
+
+
+
+extension ViewController {
+    
+    
+    func alertMessage(_ text: String) {
+        
+        let alert = UIAlertController(title: "Alert", message: text, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+            return
+        }))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
 }
 
