@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var counterLabel: UILabel!
     @IBOutlet weak var startButton: UIButton!
     @IBOutlet weak var restartButton: UIButton!
-    @IBOutlet weak var lineView: UIView!
+    @IBOutlet var resultView: [UIView]!
     @IBOutlet weak var indexLabel: UILabel!
     
     // MARK: - Properties
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         // Radius button and view
         startButton.layer.cornerRadius = 10
         restartButton.layer.cornerRadius = 10
-        lineView.layer.cornerRadius = 10
+        resultView.forEach { $0.layer.cornerRadius = 10 }
     }
     
     
@@ -73,6 +73,12 @@ class ViewController: UIViewController {
         guard let number = Int(numberText) else { fatalError() }
         guard let value = Int(valueText) else { fatalError() }
         
+        if number > 9999999 {
+            self.alertMessage("It's very big number!")
+            arrayNumbersTextField.text = ""
+            return
+            
+        }
         if number == 0 { self.alertMessage("The array must be > 0")}
         if value > number { self.alertMessage("The value must be <= \(numberText)"); return }
         if value == 0 { self.alertMessage("The value must be > 0"); return }
@@ -93,13 +99,9 @@ class ViewController: UIViewController {
     }
 }
 
-
-
+// MARK: Alert message
 extension ViewController {
-    
-    
-    func alertMessage(_ text: String) {
-        
+    private func alertMessage(_ text: String) {
         let alert = UIAlertController(title: "Alert", message: text, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
             return
